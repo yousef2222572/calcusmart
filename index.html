@@ -4,140 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcusmart</title>
-</head>
-
-<body class="body">
-    <div class="wait_soon">Stay tuned soon</div>
-
     <style>
-        .wait_soon{
-            position: absolute;
-            width: 1000px;
-            height: 400px;
-            background:linear-gradient(to left ,rgb(115, 41, 181),rgb(177, 16, 59));
-            border-radius: 50px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            font-size: 140px;
-            text-align: center;
-            line-height: 250%;
-            transition: 0.5s all;
-            color: aqua;
+        /* ===== Body ===== */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to left, rgba(6, 222, 211, 0.786), rgb(0, 75, 205));
+            transition: 3s all;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        .wait_soon:hover{
-            width: 1020px ;
-            height:417px;
-            color: blueviolet;    
+            height: 100vh;
+            overflow: hidden;
         }
 
-        @media (max-width:1100px){
-            .wait_soon{ 
-                width: 85%;
-                height:27%;
-                font-size: 600%;
-                justify-content: center;
-                align-items: center;
-                color: aqua;
-            }
-            .wait_soon:hover{
-                width: 87% ;
-                height: 29%;
-                color: blueviolet;
-            }
+        body:hover {
+            background: linear-gradient(to left, rgb(115, 41, 181), rgb(177, 16, 59));
         }
 
-        @media (max-height:900px){
-            .wait_soon{ 
-                width: 85%;
-                height:27%;
-                font-size: 600%;
-                justify-content: center;
-                align-items: center;
-                line-height: 200%;
-                color: aqua;
-            }
-            .wait_soon:hover{
-                width: 87% ;
-                height: 29%;
-                color: blueviolet;
-            }
-        }
-
-        @media (max-height:500px){
-            .wait_soon{ 
-                width: 85%;
-                height:27%;
-                font-size: 600%;
-                justify-content: center;
-                align-items: center;
-                line-height: 115%;
-                color: aqua;
-            }
-            .wait_soon:hover{
-                width: 87% ;
-                height: 29%;
-                color: blueviolet;
-            }
-        }
-
-        @media (max-height:1000px){
-            .wait_soon{ 
-                width: 85%;
-                height:27%;
-                font-size: 600%;
-                justify-content: center;
-                align-items: center;
-                color: aqua;
-            }
-            .wait_soon:hover{
-                width: 87% ;
-                height: 29%;
-                color: blueviolet;
-            }
-        }
-
-        .body{
-            background:linear-gradient(to left,rgba(6, 222, 211, 0.786) , rgb(0, 75, 205));
-        }
-        .body:hover{
-            transition: 3s all;
-            background:linear-gradient(to left ,rgb(115, 41, 181),rgb(177, 16, 59));
-        }
-
-        .calcu{
-            position: absolute;
-            width: 100%;
-            height: 120px ;
-            background:linear-gradient(to left ,rgb(115, 41, 181),rgb(177, 16, 59));
-            left: 0%;
-            top: -35px;
-            text-align: center;
-            font-size: 100px;
-            line-height: 0px;
-            color:rgba(240, 248, 255, 0);
-            transition: 1s all;
-        }
-
-        .calcu:hover{
-            height:160px;
-            width: 100%;
-            color:rgb(115, 41, 181);
-            text-align: center;
+        /* ===== Wait Soon Box ===== */
+        .wait_soon {
+            display: flex;
+            justify-content: center;
             align-items: center;
-            line-height: 200px;
-            background:linear-gradient(to left,rgba(6, 222, 211, 0.786) , rgb(0, 75, 205));
+            text-align: center;
+            width: 50vw;
+            height: 20vh;
+            font-size: 4vw;
+            color: aqua;
+            transition: 0.5s all;
+            position: relative;
+            margin-bottom: 30px;
         }
 
-        .logo {
-            font-size: 70px;
-            font-weight: 700;
-            color: #111;
-            letter-spacing: 1px;
+        .wait_soon:hover {
+            width: 52vw;
+            height: 22vh;
+            color: blueviolet;
         }
+
+        /* ===== Logo ===== */
+        .logo {
+            font-size: 5vw;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+
         .logo .c {
             background: linear-gradient(45deg, #ff8000, #ff4d00);
             -webkit-background-clip: text;
@@ -145,21 +58,69 @@
             display: inline-block;
             animation: pulse 2s infinite;
         }
+
         .logo .dot {
             color: #ff8000;
-            font-size: 75px;
+            font-size: 5.5vw;
             animation: bounce 1.5s infinite;
         }
+
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
+
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
         }
+
+        /* ===== Calculator Placeholder ===== */
+        .calcu {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 6vw;
+            line-height: 1.2;
+            color: rgba(0, 0, 0, 0);
+            transition: 1s all;
+        }
+
+        .calcu:hover {
+            color: rgb(115, 41, 181);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 1100px) {
+            .wait_soon {
+                width: 80%;
+                height: 25%;
+                font-size: 6vw;
+            }
+
+            .wait_soon:hover {
+                width: 82%;
+                height: 27%;
+            }
+        }
+
+        @media (max-height: 900px) {
+            .wait_soon {
+                height: 22%;
+                font-size: 5vw;
+            }
+
+            .wait_soon:hover {
+                height: 24%;
+            }
+        }
     </style>
+</head>
+<body>
+
+    <div class="wait_soon">Stay tuned soon</div>
 
     <div class="calcu">
         <div class="logo">
@@ -168,4 +129,4 @@
     </div>
 
 </body>
-</html>          
+</html>
